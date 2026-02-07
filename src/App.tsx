@@ -16,6 +16,7 @@ import { ExtractPages } from './screens/ExtractPages';
 import { ExportPDF } from './screens/ExportPDF';
 import { PasswordProtect } from './screens/PasswordProtect';
 import { BatchProcess } from './screens/BatchProcess';
+import { UpdateNotification } from './components/UpdateNotification';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
           element={<Navigate to={hasCompletedOnboarding ? "/dashboard" : "/"} replace />}
         />
       </Routes>
+      <UpdateNotification />
     </Router>
   );
 }

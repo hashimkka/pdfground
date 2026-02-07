@@ -9,6 +9,7 @@ interface ButtonProps {
     type?: 'button' | 'submit' | 'reset';
     disabled?: boolean;
     loading?: boolean;
+    size?: 'sm' | 'md' | 'lg';
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -19,8 +20,17 @@ export const Button: React.FC<ButtonProps> = ({
     type = 'button',
     disabled = false,
     loading = false,
+    size = 'md',
 }) => {
-    const baseStyles = 'px-8 py-3 rounded-full font-medium text-base transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed';
+    const sizeStyles = {
+        sm: 'px-4 py-2 text-sm',
+        md: 'px-8 py-3 text-base',
+        lg: 'px-10 py-4 text-lg',
+    };
+
+    const baseStyles = 'rounded-full font-medium transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed';
+
+    const combinedClassName = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
 
     const variantStyles = {
         primary: 'bg-primary text-background hover:bg-primary/90 hover:shadow-glow',
@@ -35,7 +45,7 @@ export const Button: React.FC<ButtonProps> = ({
             type={type}
             onClick={onClick}
             disabled={disabled || loading}
-            className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+            className={combinedClassName}
             whileHover={{ scale: disabled || loading ? 1 : 1.05 }}
             whileTap={{ scale: disabled || loading ? 1 : 0.95 }}
         >
