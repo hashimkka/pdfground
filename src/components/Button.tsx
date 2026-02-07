@@ -30,8 +30,6 @@ export const Button: React.FC<ButtonProps> = ({
 
     const baseStyles = 'rounded-full font-medium transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed';
 
-    const combinedClassName = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
-
     const variantStyles = {
         primary: 'bg-primary text-background hover:bg-primary/90 hover:shadow-glow',
         secondary: 'bg-transparent text-primary border-2 border-primary hover:bg-primary/10 hover:shadow-glow',
@@ -39,6 +37,8 @@ export const Button: React.FC<ButtonProps> = ({
         danger: 'bg-red-500 text-white hover:bg-red-600 hover:shadow-lg',
         ghost: 'bg-transparent text-white hover:bg-white/10',
     };
+
+    const combinedClassName = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
 
     return (
         <motion.button
