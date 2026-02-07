@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import { PDFDocument } from 'pdf-lib';
-import * as pdfjsLib from 'pdfjs-dist';
+// import * as pdfjsLib from 'pdfjs-dist';
 import { addToHistoryWithFile, getHistory, downloadFromHistory } from '../utils/historyStorage';
 
 export const SplitPDF: React.FC = () => {

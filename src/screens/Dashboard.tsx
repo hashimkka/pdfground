@@ -245,7 +245,7 @@ export const Dashboard: React.FC = () => {
                             <h3 className="text-xl font-semibold text-white mb-4">Recent Works</h3>
                             <div className="bg-dark-lighter/80 backdrop-blur-xl border border-stroke/50 rounded-2xl p-6">
                                 <div className="space-y-3">
-                                    {recentWorks.map((item, index) => (
+                                    {recentWorks.map((item) => (
                                         <div
                                             key={item.id}
                                             className="flex items-center gap-4 p-3 rounded-xl hover:bg-background/50 transition-colors group cursor-pointer"

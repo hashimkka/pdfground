@@ -20,7 +20,7 @@ export const initPostHog = (): void => {
             autocapture: false, // Manual tracking only - no automatic event capture
             capture_pageview: false, // Manual pageview tracking
             disable_session_recording: true, // Respect user privacy
-            loaded: (posthog) => {
+            loaded: (_posthog) => {
                 if (import.meta.env.DEV) {
                     console.log('PostHog initialized successfully');
                 }
