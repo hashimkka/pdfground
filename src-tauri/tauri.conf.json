@@ -32,7 +32,9 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "shortDescription": "PDFGround - Advanced PDF Tools",
+    "longDescription": "A powerful, secure, and private PDF toolkit for merging, splitting, compressing, and converting PDFs entirely offline."
   },
   "plugins": {
     "updater": {
