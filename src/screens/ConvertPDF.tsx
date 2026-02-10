@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import { PDFDocument } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
 import { addToHistoryWithFile, getHistory, downloadFromHistory } from '../utils/historyStorage';
-// import { trackPDFOperation } from '../utils/posthog';
+
 
 // Configure PDF.js worker - use local worker to avoid Vite dynamic import issues
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(

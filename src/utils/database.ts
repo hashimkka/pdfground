@@ -98,7 +98,7 @@ const saveDatabaseToIndexedDB = async (): Promise<void> => {
 // Load database from IndexedDB
 const loadDatabaseFromIndexedDB = (): Promise<Uint8Array | null> => {
     return new Promise((resolve) => {
-        const request = indexedDB.open('LocaledPDF', 1);
+        const request = indexedDB.open('PDFGround', 1);
 
         request.onupgradeneeded = (event) => {
             const db = (event.target as IDBOpenDBRequest).result;

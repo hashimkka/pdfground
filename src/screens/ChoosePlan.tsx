@@ -120,7 +120,7 @@ export const ChoosePlan: React.FC = () => {
                             </div>
 
                             <div className="mb-4">
-                                <div className="text-4xl font-bold text-white/40 mb-1">$2.9</div>
+                                <div className="text-4xl font-bold text-white/40 mb-1">$3.99</div>
                                 <div className="text-white/30 text-sm">per month</div>
                             </div>
 
@@ -140,6 +140,10 @@ export const ChoosePlan: React.FC = () => {
                                 <li className="flex items-start gap-2">
                                     <span className="text-stroke mt-0.5 text-lg">✓</span>
                                     <span><strong>Unlimited</strong> batch processing</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-stroke mt-0.5 text-lg">✓</span>
+                                    <span><strong>Windows & Linux</strong> desktop apps</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-stroke mt-0.5 text-lg">✓</span>

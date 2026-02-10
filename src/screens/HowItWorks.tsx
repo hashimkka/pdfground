@@ -8,21 +8,18 @@ const steps = [
         number: '1',
         title: 'Upload your files',
         description: 'Drag and drop PDFs or images into the app.',
-        icon: '📤',
         gradient: 'from-blue-500 to-cyan-500',
     },
     {
         number: '2',
         title: 'Choose a tool',
         description: 'Select Merge, Split, Compress, Convert, or OCR.',
-        icon: '🛠️',
         gradient: 'from-purple-500 to-pink-500',
     },
     {
         number: '3',
         title: 'Process & download',
         description: 'Get your processed file instantly, 100% offline.',
-        icon: '⚡',
         gradient: 'from-green-500 to-emerald-500',
     },
 ];
@@ -81,20 +78,9 @@ export const HowItWorks: React.FC = () => {
 
                                 {/* Content */}
                                 <div className="relative z-10">
-                                    {/* Icon */}
-                                    <div className="mb-6 flex justify-center">
-                                        <motion.div
-                                            className={`w-16 h-16 bg-gradient-to-br ${step.gradient} rounded-xl flex items-center justify-center text-3xl shadow-lg`}
-                                            whileHover={{ rotate: 360 }}
-                                            transition={{ duration: 0.6 }}
-                                        >
-                                            {step.icon}
-                                        </motion.div>
-                                    </div>
-
                                     {/* Number Badge */}
                                     <div className="flex justify-center mb-4">
-                                        <div className={`inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br ${step.gradient} text-white font-bold text-lg rounded-lg shadow-lg`}>
+                                        <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${step.gradient} text-white font-bold text-2xl rounded-xl shadow-lg`}>
                                             {step.number}
                                         </div>
                                     </div>

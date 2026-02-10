@@ -77,7 +77,7 @@ export const ProAccess: React.FC = () => {
                     transition={{ delay: 0.05, duration: 0.2 }}
                     className="text-white/70 text-center mb-6 text-lg"
                 >
-                    Coming soon: Batch processing, advanced compression, watermarking & more — from just <span className="text-primary font-semibold">$5/month</span>.
+                    Coming soon: Unlimited operations, full history, cloud storage, unlimited batch processing, Windows & Linux apps & more — from just <span className="text-primary font-semibold">$3.99/month</span>.
                 </motion.p>
 
                 <motion.p

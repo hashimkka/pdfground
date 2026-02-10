@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import { PDFDocument } from 'pdf-lib';
 import { addToHistoryWithFile, getHistory, downloadFromHistory } from '../utils/historyStorage';
-import { trackPDFOperation } from '../utils/posthog';
+
 
 export const MergePDF: React.FC = () => {
     const navigate = useNavigate();
@@ -90,20 +90,13 @@ export const MergePDF: React.FC = () => {
 
             setFiles([]);
 
-            // Track successful merge
-            trackPDFOperation('merged', true, {
-                file_count: files.length,
-            });
+
 
             alert('✅ PDFs merged successfully!');
         } catch (error) {
             console.error('Error merging PDFs:', error);
 
-            // Track failed merge
-            trackPDFOperation('merged', false, {
-                file_count: files.length,
-                error: error instanceof Error ? error.message : 'Unknown error',
-            });
+
 
             alert('❌ Error merging PDFs. Please try again.');
         } finally {

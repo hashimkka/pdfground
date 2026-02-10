@@ -16,7 +16,7 @@ import { ExtractPages } from './screens/ExtractPages';
 import { ExportPDF } from './screens/ExportPDF';
 import { PasswordProtect } from './screens/PasswordProtect';
 import { BatchProcess } from './screens/BatchProcess';
-import { UpdateNotification } from './components/UpdateNotification';
+
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -53,13 +53,10 @@ function App() {
           path="/choose-plan"
           element={hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> : <ChoosePlan />}
         />
-        <Route
-          path="/pro-access"
-          element={hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> : <ProAccess />}
-        />
 
         {/* Main app routes */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/pro-access" element={<ProAccess />} />
         <Route path="/merge" element={<MergePDF />} />
         <Route path="/split" element={<SplitPDF />} />
         <Route path="/compress" element={<CompressPDF />} />
@@ -79,7 +76,7 @@ function App() {
           element={<Navigate to={hasCompletedOnboarding ? "/dashboard" : "/"} replace />}
         />
       </Routes>
-      <UpdateNotification />
+
     </Router>
   );
 }

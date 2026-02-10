@@ -1,3 +1,4 @@
+import pdfgroundLogo from '../assets/pdfground.svg';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../components/Button';
@@ -49,40 +50,11 @@ export const Welcome: React.FC = () => {
                     className="mb-8 flex justify-center"
                 >
                     <motion.div
-                        className="w-20 h-20 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center shadow-glow-lg"
+                        className="w-20 h-20 flex items-center justify-center"
                         animate={{ y: [0, -8, 0] }}
                         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                     >
-                        <svg
-                            width="40"
-                            height="40"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M12 2L2 7L12 12L22 7L12 2Z"
-                                fill="#1d1d1d"
-                                stroke="#1d1d1d"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                            <path
-                                d="M2 17L12 22L22 17"
-                                stroke="#1d1d1d"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                            <path
-                                d="M2 12L12 17L22 12"
-                                stroke="#1d1d1d"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
+                        <img src={pdfgroundLogo} alt="PDFGround Logo" className="w-full h-full" />
                     </motion.div>
                 </motion.div>
 

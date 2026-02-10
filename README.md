@@ -1,5 +1,8 @@
 # PDFGround
 
+![License](https://img.shields.io/github/license/guyzt/pdfground)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 A powerful, privacy-focused offline PDF toolkit built with React, TypeScript, and Vite.
 
 ## Features
@@ -15,6 +18,9 @@ A powerful, privacy-focused offline PDF toolkit built with React, TypeScript, an
 - **Export PDF** - Export PDFs in different formats
 - **Password Protect** - Add password protection to PDFs
 - **Batch Process** - Process multiple files at once
+
+### Coming Soon
+- **Pro Features** - Advanced tools and priority support ($2.99/month)
 
 ## Privacy First
 
@@ -42,6 +48,10 @@ npm run dev
 npm run build
 ```
 
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) for more details.
+
 ## License
 
-Open Source - MIT License
+Open Source - [MIT License](LICENSE)

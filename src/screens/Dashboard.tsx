@@ -1,8 +1,9 @@
+import pdfgroundLogo from '../assets/pdfground.svg';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { getHistory, type HistoryItem, getOperationIcon } from '../utils/historyStorage';
-import { trackEvent } from '../utils/posthog';
+
 
 interface PDFTool {
     id: string;
@@ -116,8 +117,8 @@ export const Dashboard: React.FC = () => {
             <div className="fixed left-0 top-0 h-full w-64 bg-dark-lighter/80 backdrop-blur-xl border-r border-stroke/50 p-6 z-10">
                 <div className="mb-8">
                     <div className="flex items-center gap-3 mb-2">
-                        <div className="w-10 h-10 bg-gradient-to-br from-primary to-blue-500 rounded-xl flex items-center justify-center">
-                            <span className="text-2xl">📄</span>
+                        <div className="w-10 h-10 flex items-center justify-center">
+                            <img src={pdfgroundLogo} alt="PDFGround Logo" className="w-full h-full" />
                         </div>
                         <div>
                             <h1 className="text-xl font-bold text-white">PDFGround</h1>
@@ -199,11 +200,7 @@ export const Dashboard: React.FC = () => {
                                 <div
                                     key={tool.id}
                                     onClick={() => {
-                                        trackEvent('tool_selected', {
-                                            tool_id: tool.id,
-                                            tool_name: tool.name,
-                                            category: tool.category,
-                                        });
+
                                         navigate(tool.route);
                                     }}
                                     className="group cursor-pointer transition-transform hover:scale-105"
@@ -268,6 +265,15 @@ export const Dashboard: React.FC = () => {
                     )}
                 </div>
             </div>
+
+            {/* Floating Pro Access Button */}
+            <button
+                onClick={() => navigate('/pro-access')}
+                className="fixed bottom-24 right-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-glow hover:shadow-glow-lg transition-all hover:scale-105 flex items-center gap-2 z-50"
+            >
+                <span className="text-xl">⭐</span>
+                <span className="font-semibold">Upgrade to Pro</span>
+            </button>
 
             {/* Floating Feedback Button */}
             <button

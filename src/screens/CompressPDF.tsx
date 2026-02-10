@@ -6,7 +6,7 @@ import { PDFDocument } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
 import imageCompression from 'browser-image-compression';
 import { addToHistoryWithFile, getHistory, downloadFromHistory } from '../utils/historyStorage';
-import { trackPDFOperation } from '../utils/posthog';
+
 
 // Configure PDF.js worker
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
@@ -26,7 +26,12 @@ export const CompressPDF: React.FC = () => {
     React.useEffect(() => {
         const loadHistory = async () => {
             const allHistory = await getHistory();
-            const compressHistory = allHistory.filter(item => item.operation === 'compress' && !item.details?.includes('export') && !item.details?.includes('password')).slice(0, 5);
+            const compressHistory = allHistory.filter(item =>
+                item.operation === 'compress' &&
+                !item.details?.includes('export') &&
+                !item.details?.includes('password') &&
+                !item.details?.includes('Batch')
+            ).slice(0, 5);
             setHistory(compressHistory);
         };
         loadHistory();
@@ -150,22 +155,23 @@ export const CompressPDF: React.FC = () => {
                 'application/pdf'
             );
 
+            // Reload history to update sidebar
+            const allHistory = await getHistory();
+            const compressHistory = allHistory.filter(item =>
+                item.operation === 'compress' &&
+                !item.details?.includes('export') &&
+                !item.details?.includes('password') &&
+                !item.details?.includes('Batch')
+            ).slice(0, 5);
+            setHistory(compressHistory);
+
             setProgress(100);
 
-            // Track successful compression
-            trackPDFOperation('compressed', true, {
-                original_size_mb: (originalSize / 1024 / 1024).toFixed(2),
-                compressed_size_mb: (compressedSize / 1024 / 1024).toFixed(2),
-                reduction_percent: reduction.toFixed(1),
-                page_count: numPages,
-            });
+
         } catch (error) {
             console.error('Error compressing PDF:', error);
 
-            // Track failed compression
-            trackPDFOperation('compressed', false, {
-                error: error instanceof Error ? error.message : 'Unknown error',
-            });
+
 
             alert('Error compressing PDF. Please try again.');
         } finally {
