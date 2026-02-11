@@ -112,8 +112,8 @@ export const HowItWorks: React.FC = () => {
                     <Button variant="secondary" onClick={() => navigate('/')}>
                         ← Back
                     </Button>
-                    <Button onClick={() => navigate('/choose-plan')}>
-                        Next →
+                    <Button onClick={() => navigate('/onboarding/choose-plan')}>
+                        Continue →
                     </Button>
                 </motion.div>
             </motion.div>

@@ -94,7 +94,7 @@ export const Welcome: React.FC = () => {
                     transition={{ delay: 0.2, duration: 0.3 }}
                     className="flex justify-center"
                 >
-                    <Button onClick={() => navigate('/how-it-works')}>
+                    <Button onClick={() => navigate('/onboarding/how-it-works')}>
                         Let's Start →
                     </Button>
                 </motion.div>

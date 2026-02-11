@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Landing } from './screens/Landing';
 import { Welcome } from './screens/Welcome';
 import { HowItWorks } from './screens/HowItWorks';
 import { ChoosePlan } from './screens/ChoosePlan';
@@ -40,17 +41,20 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Onboarding flow - only accessible if not completed */}
+        {/* Landing page - default route */}
+        <Route path="/" element={<Landing />} />
+
+        {/* Onboarding flow */}
         <Route
-          path="/"
+          path="/onboarding"
           element={hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> : <Welcome />}
         />
         <Route
-          path="/how-it-works"
+          path="/onboarding/how-it-works"
           element={hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> : <HowItWorks />}
         />
         <Route
-          path="/choose-plan"
+          path="/onboarding/choose-plan"
           element={hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> : <ChoosePlan />}
         />
 
@@ -70,11 +74,8 @@ function App() {
         <Route path="/password" element={<PasswordProtect />} />
         <Route path="/batch" element={<BatchProcess />} />
 
-        {/* Redirect all unknown routes */}
-        <Route
-          path="*"
-          element={<Navigate to={hasCompletedOnboarding ? "/dashboard" : "/"} replace />}
-        />
+        {/* Redirect all unknown routes to landing */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
     </Router>

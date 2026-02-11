@@ -129,7 +129,7 @@ export const ProAccess: React.FC = () => {
                     <Button
                         type="button"
                         variant="secondary"
-                        onClick={() => navigate('/choose-plan')}
+                        onClick={() => navigate('/onboarding/choose-plan')}
                     >
                         ← Back
                     </Button>
@@ -138,6 +138,6 @@ export const ProAccess: React.FC = () => {
                     </Button>
                 </motion.div>
             </motion.div>
-        </div>
+        </div >
     );
 };

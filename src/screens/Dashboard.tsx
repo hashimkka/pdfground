@@ -155,12 +155,23 @@ export const Dashboard: React.FC = () => {
 
                 {/* Privacy Badge */}
                 <div
-                    className="mt-auto pt-6 border-t border-stroke/30"
+                    className="mt-auto pt-6 border-t border-stroke/30 space-y-3"
                 >
                     <div className="flex items-center gap-2 text-xs text-white/40">
                         <span className="text-green-400">🔒</span>
                         <span>100% Offline & Private</span>
                     </div>
+
+                    {/* GitHub Link */}
+                    <a
+                        href="https://github.com/hashimkka/pdfground"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-xs text-primary/80 hover:text-primary transition-colors group"
+                    >
+                        <span className="text-base group-hover:scale-110 transition-transform">⭐</span>
+                        <span>Open Source on GitHub</span>
+                    </a>
                 </div>
             </div>
 
