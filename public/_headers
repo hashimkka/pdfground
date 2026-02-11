@@ -1,0 +1,20 @@
+/*.js
+  Content-Type: application/javascript; charset=utf-8
+
+/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+
+/*.wasm
+  Content-Type: application/wasm
+
+/*.worker.js
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/*.js
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/*.wasm
+  Content-Type: application/wasm
